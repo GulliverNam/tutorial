@@ -58,10 +58,16 @@ class Square extends React.Component {
 
 // 게임의 상태를 Borad 컴포넌트에 저장하는 것이 중요
 class Board extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            squares: Array(9).fill(null),
+        };
+    }
 
     renderSquare(i) {
         // 자식 컴포넌트인 Square에 value 변수 전달
-        return <Square value={i} />;
+        return <Square value = {i} />;
     }
   
     render() {
